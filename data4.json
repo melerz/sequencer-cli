@@ -2,7 +2,7 @@
 		"name":"michal-80",
 		"illumina_name":"150204_NS500183_0080_AH32VVBGXX",
 		"csv":"michal-80",
-		"job-id":"102",
+		"job_id":"102",
 		"configuration":{
 
 						"R1": {
