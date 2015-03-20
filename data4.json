@@ -1,11 +1,9 @@
 {
-
 		"name":"michal-80",
 		"illumina_name":"150204_NS500183_0080_AH32VVBGXX",
 		"csv":"michal-80.csv",
 		"job-id":"102",
-		"configuration":
-			{
+		"configuration":{
 
 						"R1": {
 								"NumCycles":"75",
