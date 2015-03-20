@@ -32,8 +32,6 @@ def run(data,log_level="INFO",log_file="./fastq-log.log"):
 		#Output folder is fastq, created by createRundir
 		operations.runExpirement(data)
 
-		update_data("http://10.100.102.11:8080/illuminaapi/job/%s/"%data['job_id'],
-				{'description':'finished to generate fastq'})
 		#Changing back to the main folder
 
 		os.chdir(currentLocation)
@@ -42,10 +40,9 @@ def run(data,log_level="INFO",log_file="./fastq-log.log"):
 
 	except Exception as e:
 		logger.exception(e)
-		update_data("http://10.100.102.11:8080/illuminaapi/job/%s/"%data['job_id'],
-			{'description':'%s'%e})
+
 		print "main exception. See log file for further details:%s"%e
-		exc_type,exc_obj,exc_tb = sys.exc_info()
+		exc_type,exc_obj,exc_tb = sys.exc_info(
 		fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
 		print(exc_type,fname,exc_tb.tb_lineno)
 
