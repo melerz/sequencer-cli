@@ -8,17 +8,19 @@ import json
 import shutil
 import logging
 import time
-from django.conf import settings
+#from django.conf import settings
 
 logger = logging.getLogger(__name__) #need to change that to __name__
 
+logger.info("Reading config file")
+config = json.load(open("./config.json","r"))
+logger.info("Succefully reading config file")	
+WEBSITE_PATH = config['output_website']
+BASE_ILLUMINA_PATH = config['illumina_store']
+UPLOAD_PATH = config['upload_path']
+
 def createRundir(experiment):
 	try:
-		logger.info("Reading config file")
-		config = json.load(open("./config.json","r"))
-		logger.info("Succefully reading config file")	
-		WEBSITE_PATH = config['output_website']
-		BASE_ILLUMINA_PATH = config['illumina_store']
 		logger.debug("start createRundir: {0}".format(experiment))
 		#Creating dir_name if not exists
 		dir_name = experiment['job_id']+"-"+experiment['name']
@@ -126,7 +128,7 @@ def createSampleSheet(csv_file_name,csv_dest="./SampleSheet.csv"):
 
 	try:
 		logger.debug("Start createSampleSheet: csv filename: {0}, destinationl: {1}".format(csv_file_name,csv_dest))
-		src = os.path.join(settings.MEDIA_ROOT,csv_file_name + ".csv")
+		src = os.path.join(UPLOAD_PATH,csv_file_name + ".csv")
 		shutil.copyfile(src,csv_dest)
 		logger.debug("End createSampleSheet")
 
