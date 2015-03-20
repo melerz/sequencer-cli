@@ -12,8 +12,13 @@ from django.conf import settings
 
 logger = logging.getLogger(__name__) #need to change that to __name__
 
-def createRundir(experiment,WEBSITE_PATH="/home/sheker/website/",BASE_ILLUMINA_PATH="/home/sheker/"):
+def createRundir(experiment):
 	try:
+		logger.info("Reading config file")
+		config = json.load(open("./config.json","r"))
+		logger.info("Succefully reading config file")	
+		WEBSITE_PATH = config['output_website']
+		BASE_ILLUMINA_PATH = config['illumina_store']
 		logger.debug("start createRundir: {0}".format(experiment))
 		#Creating dir_name if not exists
 		dir_name = experiment['job_id']+"-"+experiment['name']
@@ -64,7 +69,7 @@ def runExpirement(experiment_data,xml_path="./RunInfo.xml"):
 
 		#run the bcl2fastq
 		#p = subprocess.Popen("/usr/local/bcl2fastq/2.15.0.4/bin/bcl2fastq -o fastq -p 8 -d 6 -r 4 -w 4")
-		time.sleep(30)
+		
 		#create download link - mayb we don't need that!
 
 		logger.debug("End runExpirement successfully")

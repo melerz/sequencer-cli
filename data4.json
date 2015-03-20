@@ -1,23 +1,24 @@
 {
 
-		"name":"michal-79",
-		"illumina_id":"1",
-		"csv":"michal-79",
+		"name":"michal-80",
+		"illumina_name":"150204_NS500183_0080_AH32VVBGXX",
+		"csv":"michal-80.csv",
+		"job-id":"102",
 		"configuration":
 			{
 
 						"R1": {
-								"NumCycles":"100",
+								"NumCycles":"75",
 								"IsIndexedRead":"no"
 							},
 						"R2": {
-								"NumCycles":"6",
+								"NumCycles":"8",
 								"IsIndexedRead":"yes"
 						},
 						
 						"R3": {
-								"NumCycles":"100",
-								"IsIndexedRead":"no"
+								"NumCycles":"8",
+								"IsIndexedRead":"yes"
 						}
 			},
 }

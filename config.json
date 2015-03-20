@@ -1,5 +1,6 @@
 {
 	"api":"http://132.65.120.148:8080/illuminaapi",
 	"illumina_store":"/cs/nextseq/",
+	"upload_path":"/cs/wetlab/sequencer-cli/uploads/",
 	"output_website":""
 }
