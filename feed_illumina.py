@@ -2,7 +2,8 @@ import datetime
 import os
 import requests
 import time
-def feed(path="/home/sheker/",post_url="http://132.65.120.148:8080/illuminaapi/illumina/"):
+import json
+def feed(path,post_url):
 	for illumina_dir in os.listdir(path):
 		data={}
 		raw_createdtime = os.path.getctime(os.path.join(path,illumina_dir))
@@ -10,7 +11,17 @@ def feed(path="/home/sheker/",post_url="http://132.65.120.148:8080/illuminaapi/i
 		
 		data["name"] = illumina_dir
 		data["date"] = illumina_date
-		print data
-		#res=requests.post(post_url,data)
+		res=requests.post(post_url,data)
+		if not res.ok:
+			print "Couldnt create new data"
 
-feed()
+
+
+
+if __name__ == "__main__":
+	f=open("./config.json","r")
+	config = json.load(f)
+	illumina_path = config['illumina_store']
+	post_url = config['api'] + "/illumina/"
+
+	feed(illumina_path,post_url)
