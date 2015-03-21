@@ -7,16 +7,16 @@
 
 						"1": {
 								"NumCycles":"75",
-								"IsIndexedRead":"no"
+								"IsIndexedRead":"N"
 							},
 						"2": {
 								"NumCycles":"8",
-								"IsIndexedRead":"yes"
+								"IsIndexedRead":"Y"
 						},
 						
 						"3": {
 								"NumCycles":"8",
-								"IsIndexedRead":"yes"
+								"IsIndexedRead":"Y"
 						}
 		}
 }

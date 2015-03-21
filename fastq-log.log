@@ -277,3 +277,11 @@ Traceback (most recent call last):
   File "createfastq.py", line 33, in run
   File "createfastq_operations.py", line 67, in runExpirement
 Exception: Exception in runExpirement : error in createSampleSheet Requested setting MEDIA_ROOT, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+2015-03-20 19:49:48,478 - createfastq - INFO - Currently experiment:michal-80
+2015-03-20 19:49:48,481 - createfastq - INFO - michal-80: Init Directory
+2015-03-20 19:49:48,494 - createfastq - INFO - michal-80: Run bcl2fastq
+2015-03-20 19:49:48,494 - createfastq - ERROR - Exception in runExpirement : Exception in cleanXML : [Errno 2] No such file or directory: './RunInfo.xml'
+Traceback (most recent call last):
+  File "createfastq.py", line 33, in run
+  File "createfastq_operations.py", line 79, in runExpirement
+Exception: Exception in runExpirement : Exception in cleanXML : [Errno 2] No such file or directory: './RunInfo.xml'

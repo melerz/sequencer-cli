@@ -5,16 +5,16 @@
 		"job_id":"102",
 		"configuration":{
 
-						"R1": {
+						"1": {
 								"NumCycles":"75",
 								"IsIndexedRead":"no"
 							},
-						"R2": {
+						"2": {
 								"NumCycles":"8",
 								"IsIndexedRead":"yes"
 						},
 						
-						"R3": {
+						"3": {
 								"NumCycles":"8",
 								"IsIndexedRead":"yes"
 						}
